@@ -1,6 +1,12 @@
 import React from 'react';
 
-const ButtonLink = ({ url, text, padding }) => {
+interface ButtonLinkProps {
+  url: string;
+  text: string;
+  padding: string;
+}
+
+const ButtonLink = ({ url, text, padding }:ButtonLinkProps) => {
   return (
     <a
       href={url}

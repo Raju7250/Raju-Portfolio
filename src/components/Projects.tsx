@@ -4,7 +4,14 @@ import vpn from '../assets/vpn.png'
 import copeople from '../assets/copeople.png'
 import Footer from './Footer'
 
-const ProjectCard = ({ image, title, description, git, technologies }) => {
+interface ProjectCardProps {
+    image: {};
+    title: string;
+    description: string;
+    git: string;
+    technologies: string[];
+}
+const ProjectCard = ({ image, title, description, git, technologies }:ProjectCardProps) => {
     return (
         <div className="max-w-sm sm:max-w-sm md:max-w-sm bg-gray-900 border border-neutral-100 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
             {title==='Snap Shot' && <button type="button">
@@ -46,7 +53,7 @@ const Projects = () => {
                         image={item.image}
                         title={item.title}
                         description={item.description}
-                        links={item.links}
+                        // links={item.links}
                         git={item.git}
                         technologies={item.technologies}
                     />

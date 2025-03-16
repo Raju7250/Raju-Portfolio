@@ -5,7 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { EMAIL_JS_SERVICE_ID, EMAIL_JS_TEMPLATE_ID, EMAIL_JS_PUBLIC_KEY } from "../constants";
 import Footer from "./Footer";
 const Contact = () => {
-	const formRef = useRef();
+	const formRef = useRef<HTMLFormElement>(null);
 	const [form, setForm] = useState({
 		name: "",
 		email: "",
@@ -15,7 +15,7 @@ const Contact = () => {
 
 	const [loading, setLoading] = useState(false);
 
-	const handleChange = (e) => {
+	const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
 		const { target } = e;
 		const { name, value } = target;
 
@@ -25,7 +25,7 @@ const Contact = () => {
 		});
 	};
 
-	const handleSubmit = (e) => {
+	const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 		setLoading(true);
 
@@ -42,6 +42,10 @@ const Contact = () => {
 			return;
 		}
 		console.log(username,user_email,user_message)
+
+		if (!EMAIL_JS_SERVICE_ID || !EMAIL_JS_TEMPLATE_ID || !EMAIL_JS_PUBLIC_KEY) {
+			throw new Error("EmailJS environment variables are not properly set.");
+		}
 
 		emailjs
 			.send(

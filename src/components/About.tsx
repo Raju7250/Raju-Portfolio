@@ -4,7 +4,12 @@ import { services } from '../constants';
 import ButtonLink from './ButtonLink';
 import Footer from './Footer';
 
-const ServiceCard = ({ service }) => (
+interface Service {
+  icon: string;
+  title: string;
+}
+
+const ServiceCard = ({ service }: { service: Service }) => (
   <div className='sm:w-[250px] w-full'>
     <div
       className='w-full green-pink-gradient p-[1px] rounded-[20px]'>

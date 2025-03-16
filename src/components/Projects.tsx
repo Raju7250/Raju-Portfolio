@@ -1,9 +1,6 @@
-
-import React from "react";
 import vpn from '../assets/vpn.png'
 import copeople from '../assets/copeople.png'
 import Footer from './Footer'
-
 interface ProjectCardProps {
     image: {};
     title: string;

@@ -1,5 +1,3 @@
-import React from 'react';
-
 interface ButtonLinkProps {
   url: string;
   text: string;

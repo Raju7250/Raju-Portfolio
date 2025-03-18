@@ -134,6 +134,7 @@ const Contact = () => {
 						<button
 							type='submit'
 							className='pt-3 px-8 rounded-xl outline-none w-fit font-bold shadow-md bg-gray-900'
+							style={{ padding: "10px 32px 10px 32px" }}
 						>
 							{loading ? "Sending..." : "Send"}
 						</button>
